@@ -1,0 +1,22 @@
+<div>Mix your coffee</div>
+
+<div class="coffee-mixer">
+  <div>
+  Coffee: {{input id="coffee" type="range" min="0" max="100" step="10" value=coffee}}
+  </div>
+  <div>
+  Sugar: {{input id="sugar" type="range" min="0" max="100" step="10" value=sugar}}
+  </div>
+  <div>
+  Milk: {{input id="milk" type="range" min="0" max="100" step="10" value=milk}}
+  </div>
+  <button type="button" class="submit-button" {{action "mixIt"}}>Mix it</button>
+</div>
+<div class="coffee-mix-progress {{if mixing "show-block"}}">
+  <div>Coffe: {{coffee}}</div>
+  <div>Sugar: {{sugar}}</div>
+  <div>Milk: {{milk}}</div>
+  <button type="button" class="submit-button" {{action "apply"}}>Apply</button>
+</div>
+
+{{outlet}}

@@ -1,0 +1,29 @@
+<div>Mix your cappuccino</div>
+
+<div class="coffee-mixer">
+  <div>
+  Coffee: {{input id="coffee" type="range" min="0" max="100" step="10" value=model.mix.coffee}} {{model.mix.coffee}}
+  </div>
+  <div>
+  Sugar: {{input id="sugar" type="range" min="0" max="100" step="10" value=model.mix.sugar}} {{model.mix.sugar}}
+  </div>
+</div>
+<div class="coffee-mix-progress show-block">
+  <div>
+    <div>
+      <ul id="menu">
+        {{#each model.preferenceMix as |preferences|}}
+          <li id="menuItem" {{action "menuItmeClick" preferences.coffee preferences.sugar}}>
+            {{preferences.prefName}}: coffee-{{preferences.coffee}}, sugar-{{preferences.sugar}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+    {{input type="text" value=model.mix.prefName}}
+    <button type="button" class="submit-button" {{action "save"}}>Save</button>
+  </div>
+  <div>
+      <button type="button" class="submit-button" {{action "apply"}}>Apply</button>
+  </div>
+</div>
+{{outlet}}

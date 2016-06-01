@@ -1,0 +1,12 @@
+<span>Snack page</span>
+<ul id="buttons">
+  {{#each model.snack as |item|}}
+    {{#if item.inStock}}
+      <li class="{{if item.lowStock "low-stock"}}">
+        {{#link-to 'snackserved' (query-params snackType=item.name)}} {{item.name}} {{/link-to}}
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+{{outlet}}

@@ -1,0 +1,23 @@
+{
+  "snack": [
+    {"name":"Mars", "inStock":true, "lowStock":false},
+    {"name":"Snickers", "inStock":true, "lowStock":false},
+    {"name":"Twix", "inStock":true, "lowStock":true}
+  ],
+
+  "beverage": [
+    { "name": "Cola", "inStock":true},
+    { "name": "Fanta", "inStock":true},
+    { "name": "Sprite" , "inStock":true},
+    { "name": "Pepsi", "inStock":true},
+    { "name": "Coffee", "inStock":true}    
+  ],
+  
+  "coffee": [
+	{ "type": "Regular"},
+	{ "type": "Espresso"},
+	{ "type": "Cappuccino"},
+	{ "type": "Moka"},
+	{ "type": "Decaffeinated"}
+  ]
+}

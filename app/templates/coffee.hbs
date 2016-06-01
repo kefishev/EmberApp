@@ -1,0 +1,17 @@
+<span>Coffee page</span>
+
+<ul id="buttons">
+  {{#each model.coffee as |item|}}
+    <li>
+      {{#if (eq item.type "Regular")}}
+        {{#link-to 'coffeemix'}} {{item.type}} {{/link-to}}
+      {{else if (eq item.type "Cappuccino")}}
+        {{#link-to 'cappuccinomix'}} {{item.type}} {{/link-to}}
+      {{else}}
+        {{#link-to 'coffeeserved' (query-params coffeeType=item.type)}} {{item.type}} {{/link-to}}
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>
+
+{{outlet}}

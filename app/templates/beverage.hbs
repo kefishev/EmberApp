@@ -1,0 +1,17 @@
+<span>Beverage page</span>
+
+<ul id="buttons">
+  {{#each model.beverage as |item|}}
+    <li>
+      {{#if (eq item.name "Coffee")}}
+        {{#link-to 'coffee'}} {{item.name}} {{/link-to}}
+      {{else}}
+        {{#if item.inStock}}
+          {{#link-to 'beverageserved' (query-params beverageType=item.name)}} {{item.name}} {{/link-to}}
+        {{/if}}
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>
+
+{{outlet}}
